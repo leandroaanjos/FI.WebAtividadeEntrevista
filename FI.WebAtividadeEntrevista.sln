@@ -7,6 +7,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FI.WebAtividadeEntrevista",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FI.AtividadeEntrevista", "FI.AtividadeEntrevista\FI.AtividadeEntrevista.csproj", "{2B795BB7-A890-48FA-8F70-EF89F2E318D8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{9438308D-EB64-48F3-BE28-D0ABB96ECD2A}"
+	ProjectSection(SolutionItems) = preProject
+		SQLScripts\ALT_PROC__FI_SP_AltCliente.sql = SQLScripts\ALT_PROC__FI_SP_AltCliente.sql
+		SQLScripts\ALT_PROC__FI_SP_ConsCliente.sql = SQLScripts\ALT_PROC__FI_SP_ConsCliente.sql
+		SQLScripts\ALT_PROC__FI_SP_IncClienteV2.sql = SQLScripts\ALT_PROC__FI_SP_IncClienteV2.sql
+		SQLScripts\ALT_PROC__FI_SP_PesqCliente.sql = SQLScripts\ALT_PROC__FI_SP_PesqCliente.sql
+		SQLScripts\ALT_PROC__FI_SP_VerificaCliente.sql = SQLScripts\ALT_PROC__FI_SP_VerificaCliente.sql
+		SQLScripts\ALT_TABLE__clientes.sql = SQLScripts\ALT_TABLE__clientes.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

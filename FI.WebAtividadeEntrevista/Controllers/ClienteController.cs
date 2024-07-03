@@ -3,9 +3,9 @@ using WebAtividadeEntrevista.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using FI.AtividadeEntrevista.DML;
+using FI.AtividadeEntrevista.Utils;
 
 namespace WebAtividadeEntrevista.Controllers
 {
@@ -38,6 +38,19 @@ namespace WebAtividadeEntrevista.Controllers
             }
             else
             {
+                // Verifica se o CPF é valido
+                if (!DocumentoUtils.IsCpfValido(model.CPF))
+                {
+                    Response.StatusCode = 400;
+                    return Json(string.Join(Environment.NewLine, "Digito verificador do CPF inválido"));
+                }
+
+                // Verifica se o CPF não foi inserido para algum cliente
+                if (!bo.PodeUsarEsseCpf(0, model.CPF))
+                {
+                    Response.StatusCode = 400;
+                    return Json(string.Join(Environment.NewLine, "CPF informado já cadastrado para outro cliente"));
+                }
                 
                 model.Id = bo.Incluir(new Cliente()
                 {                    
@@ -49,7 +62,8 @@ namespace WebAtividadeEntrevista.Controllers
                     Nacionalidade = model.Nacionalidade,
                     Nome = model.Nome,
                     Sobrenome = model.Sobrenome,
-                    Telefone = model.Telefone
+                    Telefone = model.Telefone,
+                    CPF = model.CPF
                 });
 
            
@@ -73,6 +87,20 @@ namespace WebAtividadeEntrevista.Controllers
             }
             else
             {
+                // Verifica se o CPF é valido
+                if (!DocumentoUtils.IsCpfValido(model.CPF))
+                {
+                    Response.StatusCode = 400;
+                    return Json(string.Join(Environment.NewLine, "Digito verificador do CPF inválido"));
+                }
+
+                // Verifica se o CPF não foi inserido para algum cliente
+                if (!bo.PodeUsarEsseCpf(model.Id, model.CPF))
+                {
+                    Response.StatusCode = 400;
+                    return Json(string.Join(Environment.NewLine, "CPF informado já cadastrado para outro cliente"));
+                }
+
                 bo.Alterar(new Cliente()
                 {
                     Id = model.Id,
@@ -84,7 +112,8 @@ namespace WebAtividadeEntrevista.Controllers
                     Nacionalidade = model.Nacionalidade,
                     Nome = model.Nome,
                     Sobrenome = model.Sobrenome,
-                    Telefone = model.Telefone
+                    Telefone = model.Telefone,
+                    CPF = model.CPF
                 });
                                
                 return Json("Cadastro alterado com sucesso");
@@ -111,10 +140,9 @@ namespace WebAtividadeEntrevista.Controllers
                     Nacionalidade = cliente.Nacionalidade,
                     Nome = cliente.Nome,
                     Sobrenome = cliente.Sobrenome,
-                    Telefone = cliente.Telefone
+                    Telefone = cliente.Telefone,
+                    CPF = cliente.CPF
                 };
-
-            
             }
 
             return View(model);

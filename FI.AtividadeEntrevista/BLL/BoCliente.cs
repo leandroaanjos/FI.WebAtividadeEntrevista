@@ -71,12 +71,23 @@ namespace FI.AtividadeEntrevista.BLL
         /// <summary>
         /// VerificaExistencia
         /// </summary>
-        /// <param name="CPF"></param>
+        /// <param name="CPF"></param>  
         /// <returns></returns>
         public bool VerificarExistencia(string CPF)
         {
             DAL.DaoCliente cli = new DAL.DaoCliente();
             return cli.VerificarExistencia(CPF);
+        }
+
+        /// <summary>
+        /// Se CPF não cadastrado ou é do mesmo cliente do ID informado por parametro então pode usar
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cpf"></param>
+        public bool PodeUsarEsseCpf(long id, string cpf)
+        {
+            DAL.DaoCliente cli = new DAL.DaoCliente();
+            return cli.PodeUsarEsseCpf(id, cpf);
         }
     }
 }
