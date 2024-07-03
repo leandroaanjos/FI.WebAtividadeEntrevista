@@ -1,0 +1,32 @@
+﻿<form id="formBeneficiario" method="post" class="form form-inline" style="margin-bottom: 15px">
+    <div class="row">
+        <div style="display: flex; align-items: end;">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="CPF">CPF:</label>
+                    <input required="required" type="text" class="form-control" id="BeneficiarioCPF" name="BeneficiarioCPF" placeholder="Ex.: 010.011.111-00" maxlength="14"
+                           pattern="^\d{3}.\d{3}.\d{3}-\d{2}$" title="CPF válido no formato 000.111.222-33">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Nome">Nome:</label>
+                    <input required="required" type="text" class="form-control" id="BeneficiarioNome" name="BeneficiarioNome" placeholder="Ex.: João" maxlength="50">
+                </div>
+            </div>
+            <div class="col-md-2" style="padding-left: 0">
+                <button type="submit" class="btn btn-success">Incluir</button>
+            </div>
+        </div>
+    </div>
+</form>
+<table id="gridBeneficiarios" class="table">
+    <thead>
+        <tr>
+            <th>CPF</th>
+            <th>Nome</th>
+            <th style="width: 30%">Ações</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>

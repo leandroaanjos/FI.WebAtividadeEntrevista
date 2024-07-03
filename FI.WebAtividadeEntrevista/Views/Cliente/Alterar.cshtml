@@ -3,12 +3,31 @@
     ViewBag.Title = "Alterar Cliente";
 }
 @section scripts{
-<script>
+    <script>
         var urlPost = '@Url.Action("Alterar", "Cliente", new { area = "" })';
         var obj = @Html.Raw(Json.Encode(Model));
         var urlRetorno = '@Url.Action("Index", "Cliente", new { area = "" })';
-</script>
+
+        let beneficiariosList = [];
+        beneficiariosList = @Html.Raw(Json.Encode(Model.Beneficiarios));
+    </script>
+
     @Scripts.Render("~/bundles/altClientes")
+    @Scripts.Render("~/bundles/beneficiarios")
 }
 <h2>@Html.Raw(ViewBag.Title)</h2>
 @Html.Partial("Forms")
+
+<div id="modalBeneficiarios" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Beneficiários</h4>
+            </div>
+            <div class="modal-body">
+                @Html.Partial("FormsBeneficiario")
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div> <!-- /.modal -->  
