@@ -14,7 +14,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		SQLScripts\ALT_PROC__FI_SP_IncClienteV2.sql = SQLScripts\ALT_PROC__FI_SP_IncClienteV2.sql
 		SQLScripts\ALT_PROC__FI_SP_PesqCliente.sql = SQLScripts\ALT_PROC__FI_SP_PesqCliente.sql
 		SQLScripts\ALT_PROC__FI_SP_VerificaCliente.sql = SQLScripts\ALT_PROC__FI_SP_VerificaCliente.sql
+		SQLScripts\ALT_TABLE__beneficiarios.sql = SQLScripts\ALT_TABLE__beneficiarios.sql
 		SQLScripts\ALT_TABLE__clientes.sql = SQLScripts\ALT_TABLE__clientes.sql
+		SQLScripts\CRE_PROC__FI_SP_AltBenefV2.sql = SQLScripts\CRE_PROC__FI_SP_AltBenefV2.sql
+		SQLScripts\CRE_PROC__FI_SP_ConsBeneficiariosPorTitular.sql = SQLScripts\CRE_PROC__FI_SP_ConsBeneficiariosPorTitular.sql
+		SQLScripts\CRE_PROC__FI_SP_DelBeneficiario.sql = SQLScripts\CRE_PROC__FI_SP_DelBeneficiario.sql
+		SQLScripts\CRE_PROC__FI_SP_IncBeneficiario.sql = SQLScripts\CRE_PROC__FI_SP_IncBeneficiario.sql
 	EndProjectSection
 EndProject
 Global
